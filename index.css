@@ -4,6 +4,8 @@
   --secondary-bg-color: #e6ecf2;
   --secondary-color: #333333;
   --main-background-color: #ffffff;
+  --left-asside-width: 15vw;
+  --right-aside-width: 15vw;
   --header-height: 5vh;
   --footer-height: 5vh;
   --spacing-unit: 1rem;
@@ -20,6 +22,25 @@ body {
   background-color: var(--main-background-color);
   overflow-y: hidden;
   display: grid;
+}
+
+body > aside {
+  background-color: var(--secondary-bg-color);
+  padding: var(--spacing-unit);
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  position: fixed;
+  top: var(--header-height);
+  overflow-y: auto;
+}
+
+body > aside:first-of-type {
+  right: 0;
+  width: var(--right-aside-width);
+}
+
+body > aside:last-of-type {
+  left: 0;
+  width: var(--left-asside-width);
 }
 
 header {
@@ -52,11 +73,12 @@ footer {
 main {
   background-color: var(--secondary-bg-color);
   padding: calc(var(--spacing-unit) * 1.5);
-  margin: var(--spacing-unit);
+  margin-top: calc(var(--header-height) + var(--spacing-unit));
+  margin-left: calc(var(--left-asside-width) + var(--spacing-unit));
+  margin-right: calc(var(--right-aside-width) + var(--spacing-unit));
+  margin-bottom: calc(var(--footer-height) + var(--spacing-unit));
   border-radius: var(--spacing-unit);
   overflow-y: auto;
-  margin-top: calc(var(--header-height) + var(--spacing-unit));
-  margin-bottom: calc(var(--footer-height) + var(--spacing-unit));
   height: calc(
     100vh - var(--footer-height) - var(--header-height) -
       (2 * var(--spacing-unit))
