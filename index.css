@@ -1,106 +1,238 @@
+@import url("wireframe.css");
 :root {
   --primary-bg-color: #1e90ff;
-  --primary-color: #ffffff;
+  --primary-color: #c2c2c2;
   --secondary-bg-color: #e6ecf2;
   --secondary-color: #333333;
   --main-background-color: #ffffff;
-  --left-asside-width: 15vw;
+  --left-aside-width: 7vw;
   --right-aside-width: 15vw;
   --header-height: 5vh;
   --footer-height: 5vh;
-  --spacing-unit: 1rem;
-}
+  --spacing-unit: 1.5rem;
 
+  /* use absolute or fixed to keep header in place */
+  --header-position: fixed;
+  --footer-position: static;
+}
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* Body as flex container */
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
   font-family: Arial, sans-serif;
-  background-color: var(--main-background-color);
-  overflow-y: hidden;
-  display: grid;
 }
 
-body > aside {
-  background-color: var(--secondary-bg-color);
-  padding: var(--spacing-unit);
-  height: calc(100vh - var(--header-height) - var(--footer-height));
-  position: fixed;
-  top: var(--header-height);
-  overflow-y: auto;
+body:has(header) main {
+  margin-top: var(--header-height, 0);
+}
+body:has(footer) main {
+  margin-bottom: var(--footer-height, 0);
 }
 
-body > aside:first-of-type {
+body:has(main aside + section) section {
+  margin-left: var(--left-aside-width);
+}
+
+body:has(main section + aside) section {
+  margin-right: var(--right-aside-width);
+}
+
+main > aside:first-of-type {
+  left: 0;
+  width: var(--left-aside-width);
+}
+
+main > aside:last-of-type {
   right: 0;
   width: var(--right-aside-width);
 }
 
-body > aside:last-of-type {
-  left: 0;
-  width: var(--left-asside-width);
-}
-
+/* Header adapts to content */
 header {
-  background-color: var(--primary-bg-color);
-  color: var(--primary-color);
-  display: flex;
-  position: fixed;
-  justify-content: space-between;
+  position: var(--header-position);
+  background: #747474;
   width: 100%;
-  top: 0;
-  height: var(--header-height);
-  align-content: center;
+  flex: 1;
+  color: #fff;
+  text-align: center;
+  height: var(--header-height, auto);
+  z-index: 1000;
 }
 
-header > * {
-  align-content: center;
-}
-
-footer {
-  background-color: var(--secondary-bg-color);
-  color: var(--secondary-color);
-  padding: var(--spacing-unit);
-  position: fixed;
-  display: flex;
-  width: 100%;
-  bottom: 0;
-  height: var(--footer-height);
-}
-
+/* Main fills remaining space */
 main {
-  background-color: var(--secondary-bg-color);
-  padding: calc(var(--spacing-unit) * 1.5);
-  /* margin-top: calc(var(--header-height) + var(--spacing-unit));
-  margin-left: calc(var(--left-asside-width) + var(--spacing-unit));
-  margin-right: calc(var(--right-aside-width) + var(--spacing-unit));
-  margin-bottom: calc(var(--footer-height) + var(--spacing-unit)); */
-  border-radius: var(--spacing-unit);
-  overflow-y: auto;
-  height: calc(
-    100vh - var(--footer-height) - var(--header-height) -
-      (2 * var(--spacing-unit))
-  );
+  margin: 0;
+  flex: 10;
+  /* background: #ca6969; */
+  display: flex;
+}
+/* Asides and section styling */
+aside {
+  height: 100%;
+  position: var(--header-position);
+  background: #f4f4f4;
+  padding: var(--spacing-unit) 0px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-unit);
+}
+aside h2 {
+  padding: var(--spacing-unit) calc(var(--spacing-unit) * 2);
+}
+
+nav {
+  width: 100%;
+}
+
+/* Reset default list styles */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* horizontal layout */
+  /* gap: var(--spacing-unit); */
+  flex-direction: column;
+}
+
+/* Style list items */
+nav li {
+  display: flex;
+  width: 100%; /* ensures inline-block behavior */
+}
+
+/* Style links */
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: var(--spacing-unit) calc(var(--spacing-unit) * 2);
+  transition: background 0.3s, color 0.3s;
+  width: 100%;
+}
+
+/* Hover effect */
+nav a:hover {
+  background: #0000002c;
+  color: #fff;
+}
+
+section {
+  padding: var(--spacing-unit);
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-unit);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+form {
+  padding: var(--spacing-unit);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-unit);
 }
 
-main > header {
-  height: fit-content;
-  background-color: transparent;
-  color: var(--secondary-color);
-  position: relative;
+form > * {
+  padding: var(--spacing-unit);
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-unit);
-  justify-content: left;
 }
 
-main > section {
-  height: inherit;
+input {
+  padding: calc(var(--spacing-unit) / 2);
 }
 
-body * {
-  border: 1px solid green;
+textarea {
+  padding: calc(var(--spacing-unit) / 2);
+}
+
+button {
+  cursor: pointer;
+  border-radius: calc(var(--spacing-unit) / 3);
+  padding: calc(var(--spacing-unit) / 2) var(--spacing-unit);
+}
+
+footer {
+  position: var(--footer-position);
+  background: #747474;
+  color: #fff;
+  padding: 15px;
+  flex: 1;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: var(--footer-height, auto);
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  gap: var(--spacing-unit);
+  list-style-type: disc;
+  row-gap: var(--spacing-unit);
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-unit);
+  width: 100%;
+  height: fit-content;
+}
+.big-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-unit);
+  width: 100%;
+  overflow: visible;
+}
+.big-card-list .card {
+  flex-direction: column;
+}
+
+.card {
+  width: 100%;
+  padding: var(--spacing-unit);
+  gap: var(--spacing-unit);
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  /* border: #929292 2px solid; */
+}
+
+.button-container {
+  display: flex;
+  gap: calc(var(--spacing-unit) / 2);
+}
+
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: flex;
+  padding: var(--spacing-unit);
+  gap: var(--spacing-unit);
+  /* Should be removed. Only for demonstration */
 }
