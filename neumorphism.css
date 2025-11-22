@@ -11,22 +11,39 @@
 }
 
 button {
-  width: 150px;
-  height: 150px;
   border-radius: 20px;
   background-color: #e0e0e0; /* Same as background for seamless integration */
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   font-size: 1.2em;
   color: #888;
+  border: 1px #d4d4d4;
   /* Inner shadow for the pressed effect */
-  box-shadow: inset 5px 5px 10px #bebebe,
-    /* Darker, bottom-right inset shadow */ inset -5px -5px 10px #ffffff; /* Lighter, top-left inset shadow */
+  box-shadow: inset 5px 5px 10px #ffffff,
+    /* Darker, bottom-right inset shadow */ inset -5px -5px 10px #bebebe; /* Lighter, top-left inset shadow */
   transition: all 0.2s ease-in-out; /* Smooth transition for interaction */
 }
 
 /* Optional: Adding a hover effect to simulate pressing */
 button:hover {
   box-shadow: inset 2px 2px 5px #bebebe, inset -2px -2px 5px #ffffff;
+}
+
+input {
+  border-radius: calc(var(--spacing-unit) / 2);
+  border: none;
+  box-shadow: inset calc(var(--spacing-unit) / 4) calc(var(--spacing-unit) / 4)
+      calc(var(--spacing-unit) / 4) #616161ba,
+    inset calc(var(--spacing-unit) / -4) calc(var(--spacing-unit) / -4)
+      calc(var(--spacing-unit) / 4) #ffffff69;
+}
+
+textarea {
+  border-radius: calc(var(--spacing-unit) / 2);
+  border: none;
+  box-shadow: inset calc(var(--spacing-unit) / 4) calc(var(--spacing-unit) / 4)
+      calc(var(--spacing-unit) / 4) #616161ba,
+    inset calc(var(--spacing-unit) / -4) calc(var(--spacing-unit) / -4)
+      calc(var(--spacing-unit) / 4) #ffffff69;
 }
