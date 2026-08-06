@@ -1,0 +1,10 @@
+{
+  "name": "@cochrane/ui",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint . --config ../../packages/config/eslint.config.js"
+  },
+  "dependencies": {}
+}

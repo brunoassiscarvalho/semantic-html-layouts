@@ -1,0 +1,21 @@
+{
+  "name": "@cochrane/web",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@cochrane/interfaces": "*",
+    "@cochrane/ui": "*",
+    "react-router": "^7.13.1"
+  },
+  "devDependencies": {
+    "@swc/core": "~1.7.10",
+    "@types/react": "^19.2.13",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "vite": "^7.1.7"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  }
+}
