@@ -1,0 +1,22 @@
+:root {
+  --border-radius: calc(var(--spacing-unit) / 3);
+}
+.card {
+  border: calc(var(--spacing-unit) / 10) solid rgb(175, 175, 175);
+  border-radius: var(--border-radius); /* Light border */
+}
+
+button {
+  border: calc(var(--spacing-unit) / 10) solid var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+input {
+  border-radius: var(--border-radius);
+  border: calc(var(--spacing-unit) / 10) solid var(--primary-color);
+}
+
+textarea {
+  border-radius: var(--border-radius);
+  border: calc(var(--spacing-unit) / 10) solid var(--primary-color);
+}

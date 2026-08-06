@@ -3,8 +3,115 @@ export function Home() {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <main>HOME</main>
-    </div>
+    <main>
+      <aside>
+        <h2>Aside 1</h2>
+        <nav>
+          <ul>
+            <li>
+              <a href="#link">Item 1</a>
+            </li>
+            <li>
+              <a href="#link">Item 2</a>
+            </li>
+            <li>
+              <a href="#link">Item 3</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section>
+        <div class="row">
+          <div class="column">
+            <div class="big-card-list">
+              <h3>Grid</h3>
+              <div class="card">
+                <h4>Card 1</h4>
+                <image src="placeholder.webp"></image>
+                <p>This is a description of the card.</p>
+                <div class="button-container">
+                  <button>Action 1</button>
+                  <button>Action 2</button>
+                </div>
+              </div>
+              <div class="card">
+                <h4>Card 2</h4>
+              </div>
+              <div class="card">
+                <h4>Card 3</h4>
+              </div>
+              <div class="card">Card 4</div>
+              <div class="card">Card 5</div>
+              <div class="card">Card 6</div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="grid">
+              <h3>Grid</h3>
+              <div class="card">
+                <h4>Card 1</h4>
+                <image src="placeholder.webp"></image>
+                <p>This is a description of the card.</p>
+                <div class="button-container">
+                  <button>Action 1</button>
+                  <button>Action 2</button>
+                </div>
+              </div>
+              <div class="card">
+                <h4>Card 2</h4>
+              </div>
+              <div class="card">
+                <h4>Card 3</h4>
+              </div>
+              <div class="card">
+                <h4>Card 4</h4>
+              </div>
+              <div class="card">
+                <h4>Card 5</h4>
+              </div>
+              <div class="card">
+                <h4>Card 6</h4>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="list">
+              <h3>List</h3>
+              <div class="card">
+                <h4>Card 1</h4>
+              </div>
+              <div class="card">
+                <h4>Card 2</h4>
+              </div>
+              <div class="card">
+                <h4>Card 3</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <aside>
+        <h2>Form</h2>
+        <form action="/submit-form" method="post">
+          <fieldset>
+            <legend>Contact Information</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="user_email" required />
+          </fieldset>
+
+          <fieldset>
+            <legend>Message</legend>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="user_message" rows="5"></textarea>
+          </fieldset>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </aside>
+    </main>
   );
 }
