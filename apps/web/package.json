@@ -1,11 +1,12 @@
 {
-  "name": "@cochrane/web",
+  "name": "@semantic-html-layouts/web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@cochrane/interfaces": "*",
-    "@cochrane/ui": "*",
-    "react-router": "^7.13.1"
+    "@semantic-html-layouts/interfaces": "*",
+    "@semantic-html-layouts/ui": "*",
+    "react-router": "^7.13.1",
+    "@semantic-html-layouts/ui": "*"
   },
   "devDependencies": {
     "@swc/core": "~1.7.10",

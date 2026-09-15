@@ -8,7 +8,7 @@
     "jsx": "react-jsx",
     "paths": {
       "@/*": ["./src/*"],
-      "@cochrane/ui": ["../../packages/ui/src"]
+      "@semantic-html-layouts/ui": ["../../packages/ui/src"]
     }
   },
   "include": ["src"]

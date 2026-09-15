@@ -1,0 +1,15 @@
+main {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+
+section {
+  max-width: 36rem;
+}
+
+h3 {
+  text-align: center;
+}
