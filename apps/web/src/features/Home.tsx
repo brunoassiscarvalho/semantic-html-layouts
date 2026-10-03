@@ -1,25 +1,11 @@
+import { VerticalAside } from "@semantic-html-layouts/ui";
 import { useNavigate } from "react-router";
 export function Home() {
   const navigate = useNavigate();
 
   return (
     <main>
-      <aside>
-        <h2>Aside 1</h2>
-        <nav>
-          <ul>
-            <li>
-              <a href="#link">Item 1</a>
-            </li>
-            <li>
-              <a href="#link">Item 2</a>
-            </li>
-            <li>
-              <a href="#link">Item 3</a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
+      <VerticalAside />
       <section>
         <div className="row">
           <div className="column">

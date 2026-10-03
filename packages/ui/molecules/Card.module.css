@@ -1,0 +1,16 @@
+article {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-unit);
+  gap: var(--spacing-unit);
+  width: 100%;
+  height: fit-content;
+}
+article header {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+article footer {
+  font-size: 0.9em;
+  text-align: center;
+}

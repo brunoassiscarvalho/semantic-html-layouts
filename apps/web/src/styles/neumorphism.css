@@ -1,4 +1,4 @@
-.card {
+article {
   border: none;
   background-color: #aaaaaa42;
   border-radius: calc(var(--spacing-unit) / 2);

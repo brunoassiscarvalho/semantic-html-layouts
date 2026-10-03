@@ -9,11 +9,13 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.card {
+article {
   border-radius: calc(var(--spacing-unit) / 2);
-  box-shadow: 0 0 var(--shadow-blur) var(--neon-color),
+  box-shadow:
+    0 0 var(--shadow-blur) var(--neon-color),
     0 0 calc(var(--shadow-blur) * 1.5) var(--neon-color);
-  text-shadow: 0 0 var(--shadow-spread) var(--neon-color),
+  text-shadow:
+    0 0 var(--shadow-spread) var(--neon-color),
     0 0 calc(var(--shadow-spread) * 2) var(--neon-color);
   border-color: var(--neon-color);
 }

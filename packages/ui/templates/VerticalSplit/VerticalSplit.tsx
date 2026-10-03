@@ -1,6 +1,6 @@
-import "./VerticalCenter.module.css";
+import "./VerticalSplit.module.css";
 
-export function VerticalCenter({
+export function VerticalSplit({
   title,
   subtitle,
   children,
@@ -15,6 +15,13 @@ export function VerticalCenter({
         <h3>{title}</h3>
         <p>{subtitle}</p>
         {children}
+      </section>
+      <section>
+        <article>
+          <h3>{title}</h3>
+          <p>{subtitle}</p>
+          {children}
+        </article>
       </section>
     </main>
   );

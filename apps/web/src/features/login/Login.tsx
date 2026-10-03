@@ -7,7 +7,7 @@ export function Login() {
     <VerticalCenter title="Login" subtitle="Please enter your credentials">
       <input type="text" placeholder="Username" />
       <input type="password" placeholder="Password" />
-      <button onClick={() => navigate("/home")}>Login</button>
+      <button onClick={() => navigate("/onboarding")}>Login</button>
     </VerticalCenter>
   );
 }
